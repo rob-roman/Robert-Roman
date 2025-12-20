@@ -1,136 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rob Roman – Diesel Titan</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap');
-    :root{--accent:#00ff80;--bg:#0d0d0d;--card:#1a1a1a;--text:#e0e0e0;}
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif;}
-    body{background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;}
-    a{color:var(--accent);text-decoration:none;}
-    .container{width:90%;max-width:1000px;margin:auto;padding:2rem 0;}
-    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
-    .glitch{font-family:'Orbitron',sans-serif;font-size:10vw;font-weight:700;text-transform:uppercase;color:#fff;letter-spacing:.05em;position:relative;animation:glitch 2s infinite;}
-    .glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%;}
-    .glitch::before{animation:noise-1 .7s infinite;clip-path:inset(20% 0 3% 0);z-index:-1;color:#ff00c1;}
-    .glitch::after{animation:noise-2 .7s infinite;clip-path:inset(1% 0 80% 0);z-index:-2;color:var(--accent);}
-    @keyframes glitch{0%,100%{transform:translate(0);}20%{transform:translate(-2px,2px);}40%{transform:translate(-2px,-2px);}60%{transform:translate(2px,2px);}80%{transform:translate(2px,-2px);}}
-    @keyframes noise-1{0%,100%{clip-path:inset(20% 0 3% 0);}50%{clip-path:inset(2% 0 82% 0);}}
-    @keyframes noise-2{0%,100%{clip-path:inset(1% 0 80% 0);}50%{clip-path:inset(60% 0 1% 0);}}
-    .tagline{margin:1rem 0 2rem;font-size:1.2rem;opacity:.8;}
-    .btn{background:var(--accent);color:#000;padding:.75rem 2rem;border:none;font-weight:bold;letter-spacing:1px;border-radius:4px;transition:.3s;}
-    .btn:hover{filter:brightness(1.2);}
-    #particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
-    section{padding:4rem 0;position:relative;}
-    h2{font-family:'Orbitron',sans-serif;font-size:2rem;margin-bottom:1.5rem;text-align:center;letter-spacing:2px;}
-    .skills-list{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;list-style:none;}
-    .skills-list li{background:var(--card);border:1px solid var(--accent);padding:.5rem 1rem;border-radius:4px;font-size:.9rem;}
-    .timeline{position:relative;padding-left:1.5rem;border-left:2px solid var(--accent);margin-left:1rem;}
-    .event{position:relative;margin-bottom:2rem;}
-    .event::before{content:attr(data-year);position:absolute;left:-120px;top:0;font-weight:bold;font-size:.8rem;color:var(--accent);width:100px;text-align:right;}
-    .event h3{margin-bottom:.25rem;}
-    form{display:flex;flex-direction:column;gap:1rem;max-width:500px;margin:1.5rem auto;}
-    input,textarea{padding:.75rem;background:#111;border:1px solid #555;color:var(--text);border-radius:4px;}
-    footer{text-align:center;padding:2rem 0;font-size:.8rem;opacity:.5;}
-    @media(max-width:600px){.event::before{left:-110px;}.glitch{font-size:12vw;}}
-  </style>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
 </head>
 <body>
   <canvas id="particles"></canvas>
 
-  <header class="hero">
-    <div>
+  <header class="hero" role="banner">
+    <div class="container">
       <h1 class="glitch" data-text="Rob Roman">Rob Roman</h1>
-      <p class="tagline">Fleet Surgeon · Metal Alchemist · 24/7 Mobile Rescue</p>
+      <p class="tagline">Technician · Metals Fabrication · 24/7 Mobile Rescue</p>
       <a href="#contact" class="btn">Haul Me In</a>
     </div>
   </header>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul class="skills-list">
-      <li>Alignment</li><li>Automotive Diagnostics</li><li>Fabrication</li>
-      <li>Gas Welding / Brazing</li><li>MIG Welding</li><li>ARC Welding</li>
-      <li>Soldering</li><li>Plasma Cutting</li><li>CNC & Machining</li>
-      <li>Auto A/C Repair</li><li>Diesel Engine Repair</li><li>Fleet Maintenance</li>
-      <li>Preventive Maintenance</li><li>Diagnostic Software</li><li>Cummins Insite</li>
-      <li>Eaton Service Ranger</li><li>Bendix ACOM</li><li>Electrical Systems</li>
-      <li>Driveline / Differentials</li><li>Steering & Suspension</li><li>Air Brake Systems</li>
-      <li>Clutch / Flywheel R&R</li><li>Ultrashift & Endurant</li><li>Roll-Up Door Repair</li>
-      <li>Hydraulics</li><li>Safety Compliance</li><li>Customer Service</li>
-      <li>Problem Solving</li><li>Time Management</li><li>Team Leadership</li>
-    </ul>
-  </section>
+  <main>
+    <section id="skills" class="section">
+      <h2>Tool Arsenal</h2>
+      <ul class="skills-list">
+        <li>Cummins INSITE</li>
+        <li>Eaton ServiceRanger</li>
+        <li>Bendix ACOM</li>
+        <li>MIG / ARC / TIG</li>
+        <li>Plasma Cutting</li>
+        <li>Fabrication</li>
+        <li>Ultrashift / Endurant</li>
+        <li>DD13 / ISX15</li>
+        <li>OSHA 10</li>
+      </ul>
+    </section>
 
-  <section id="timeline">
-    <h2>War Record</h2>
-    <div class="timeline">
-      <div class="event" data-year="2021-25">
-        <h3>FedEx Freight – Fleet Maintenance Technician</h3>
-        <p>Peterbilt, Kenworth, Volvo, Freightliner, International • ISX15, DD13, ISL9, ISQ7<br>
-        Eaton Ultrashifts & Endurants • clutch & flywheel R&R • electrical trans repairs<br>
-        Spring/shock/uni-seals • diff overhauls • patch corroded housings • roll-up door rebuilds<br>
-        Air system / ABS / brake chambers • lighting & ABS diagnostics</p>
-      </div>
-      <div class="event" data-year="2019-21">
-        <h3>Fred Martin Ford – Automotive Service Technician</h3>
-        <p>Flat-rate automotive & medium-duty repair / diagnosis • gas & diesel • all jobs finished quickly & correctly</p>
-      </div>
-      <div class="event" data-year="2018-19">
-        <h3>Boardman Twp Road & Fire – Fleet Maintenance Technician</h3>
-        <p>Diagnose, repair, maintain fleet vehicles & equipment • fabricate custom solutions<br>
-        Collaborate with firefighters & road crews to cut downtime & boost usability</p>
-      </div>
-      <div class="event" data-year="2015-18">
-        <h3>Taylor Kia – Auto Technician</h3>
-        <p>Began as tire/lube tech → promoted to flat-rate • A/B/C level repairs on all makes & models</p>
-      </div>
-      <div class="event" data-year="2015-∞">
-        <h3>Self-Employed – Mobile Mechanic / Welder</h3>
-        <p>24/7 on-site emergency service • strong customer service & prompt repairs • loyal repeat clientele</p>
-      </div>
-    </div>
-  </section>
+    <section id="timeline" class="section">
+      <h2>War Record</h2>
+      <div class="timeline">
+        <div class="event" data-year="2021–25">
+          <h3>FedEx Freight – Fleet Maintenance Titan</h3>
+          <p>Kept 300+ Class-8 wolves alive: engines, transmissions, air systems, doors, diffs.</p>
+        </div>
 
-  <section id="contact">
-    <h2>Light the Beacon</h2>
-   <form
-  action="https://formspree.io/f/mwpgrype"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
-    <p style="text-align:center;margin-top:1.5rem">
-      📧 ytowndown616@gmail.com | 📞 330-333-0016 | 📍 Youngstown, OH — Will travel
-    </p>
-  </section>
+        <div class="event" data-year="2019–21">
+          <h3>Fred Martin Ford – Flat-Rate Gunslinger</h3>
+          <p>Gas &amp; diesel cars / medium-duty. Zero comebacks.</p>
+        </div>
 
-  <footer>&copy; <span id="year"></span> Rob Roman – Built with diesel & midnight oil</footer>
+        <div class="event" data-year="2018–19">
+          <h3>Boardman Twp – Public-Safety Guardian</h3>
+          <p>Fabricated custom rigs for police &amp; fire. Downtime = 0.</p>
+        </div>
 
-  <script>
-    /* ---- particles ---- */
-    const canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
-    canvas.width=innerWidth;canvas.height=innerHeight;
-    const particles=[];
-    class Particle{constructor(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.size=Math.random()*1.5+0.5;this.speedX=Math.random()*0.8-0.4;this.speedY=Math.random()*0.8-0.4;this.color='rgba(0,255,128,0.7)';}
-      update(){this.x+=this.speedX;this.y+=this.speedY;if(this.x>canvas.width||this.x<0)this.speedX*=-1;if(this.y>canvas.height||this.y<0)this.speedY*=-1;}
-      draw(){ctx.fillStyle=this.color;ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fill();}}
-    function init(){for(let i=0;i<80;i++)particles.push(new Particle());}
-    function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(animate);}
-    init();animate();addEventListener('resize',()=>{canvas.width=innerWidth;canvas.height=innerHeight;});
-    /* ---- year ---- */
-    document.getElementById('year').textContent=new Date().getFullYear();
-  </script>
+        <div class="event" data-year="2015–18">
+          <h3>Taylor Kia – From Lube to A-level Tech</h3>
+          <p>Climbed the rack in a high-volume dealership.</p>
+        </div>
+
+        <div class="event" data-year="2015–∞">
+          <h3>Self-Employed – Mobile Diesel Mercenary</h3>
+          <p>Midnight rescues, on-site welding, customers for life.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Light the Beacon</h2>
+
+      <!-- Replace the action URL with your real Formspree endpoint -->
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" autocomplete="name" required />
+        <input type="email" name="email" placeholder="Your Email" autocomplete="email" required />
+        <textarea name="message" placeholder="What broke?" required></textarea>
+        <button class="btn" type="submit">Send S.O.S.</button>
+      </form>
+
+      <div class="contact-badges">
+        <a href="mailto:ytowndown616@gmail.com">📧 ytowndown616@gmail.com</a>
+        <a href="tel:3303330016">📞 330-333-0016</a>
+        <span>📍 Youngstown, OH — Will travel</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Rob Roman — Built with diesel &amp; midnight oil</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
